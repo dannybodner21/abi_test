@@ -721,8 +721,9 @@ async function getAccount() {
     async function mintNFTOne() {
   		const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
   		const account = accounts[0];
+	        const gasPrice = 20000000000;
 	        console.log(account);
-      		contract.methods.mint(account, 1).call({from: account, value: web3.utils.toWei('0.05', 'ether'), });
+      		contract.methods.mint(account, 1).call({from: account, value: gasPrice + (web3.utils.toWei(total, 'ether')), });
     }
 	
     async function mintNFTFive() {
