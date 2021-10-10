@@ -723,7 +723,7 @@ async function getAccount() {
   		const account = accounts[0];
 	        const gasPrice = 20000000000;
 	        console.log(account);
-      		contract.methods.mint(account, 1).call({from: account, value: '0.05'});
+      		contract.methods.mint(account, 1).call({from: account});
     }
 	
     async function mintNFTFive() {
