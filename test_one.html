@@ -723,8 +723,32 @@ async function getAccount() {
   		const account = accounts[0];
 	        const gasPrice = 20000000000;
 	        console.log(account);
-      		contract.methods.mint(account, 1).send({from: account, value: '50000000000000000', gasPrice: '20000000000'});
+      		contract.methods.mint(account, 1).send({from: account, value: '50000000000000000', gasPrice: '20000000000'})
+    		.then(function (txHash) {
+     			console.log('Transaction sent')
+      			console.dir(txHash)
+      		waitForTxToBeMined(txHash)
+    		})
+    		.catch(console.error)
+  		});   
+	    
     }
+    
+    async function waitForTxToBeMined (txHash) {
+ 	let txReceipt;
+  	while (!txReceipt) {
+    		try {
+      			txReceipt = await eth.getTransactionReceipt(txHash)
+    		} catch (err) {
+      			return indicateFailure(err)
+    		}
+   	}
+    	//indicateSuccess()
+	console.log("we have success, baby!");
+    }
+    
+    
+    
 	
     async function mintNFTFive() {
   		const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
