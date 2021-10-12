@@ -728,9 +728,9 @@ async function getAccount() {
      			console.log('Transaction sent')
       			console.dir(txHash)
       			waitForTxToBeMined(txHash)
-    		})
-    		.catch(console.error)
-  		) 
+    		});
+    		//.catch(console.error)
+  		//) 
 	    
     }
     
