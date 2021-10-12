@@ -791,13 +791,17 @@ async function getAccount() {
 	
     $('#mintButtonOne').click(function()
     {
-        mintNFTOne();
+        mintNFTOne().then(funtion () {
+			  	$('messageOne').html('transaction one sent successfully');
+			  });
         
     })
 	
     $('#mintButtonTwo').click(function()
     {
-        mintNFTTwo();
+        mintNFTTwo().then(funtion () {
+			  	$('messageTwo').html('transaction two sent successfully');
+			  });
         
     })
 	
