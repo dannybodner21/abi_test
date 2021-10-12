@@ -737,12 +737,11 @@ async function getAccount() {
  	let txReceipt;
   	while (!txReceipt) {
     		try {
-      			txReceipt = await eth.getTransactionReceipt(txHash)
+      			txReceipt = await web3.eth.getTransactionReceipt(txHash)
     		} catch (err) {
-      			return indicateFailure(err)
+      			return console.log(err)
     		}
    	}
-    	//indicateSuccess()
 	console.log("we have success, baby!");
     }
     
