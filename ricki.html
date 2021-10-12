@@ -852,7 +852,7 @@ async function getAccount() {
 	
     $('#mintButtonOne').click(function()
     {
-        mintNFT(1).then(function () {
+        mintNFT(0).then(function () {
 			  	$('messageOne').html('transaction one sent successfully');
 			  });
         
@@ -860,7 +860,7 @@ async function getAccount() {
 	
     $('#mintButtonTwo').click(function()
     {
-        mintNFT(2).then(function () {
+        mintNFT(1).then(function () {
 			  	$('messageOne').html('transaction two sent successfully');
 			  });
         
@@ -868,7 +868,7 @@ async function getAccount() {
   
     $('#mintButtonThree').click(function()
     {
-        mintNFT(3).then(function () {
+        mintNFT(2).then(function () {
 			  	$('messageOne').html('transaction three sent successfully');
 			  });
         
