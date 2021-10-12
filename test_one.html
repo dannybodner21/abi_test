@@ -727,10 +727,10 @@ async function getAccount() {
     		.then(function (txHash) {
      			console.log('Transaction sent')
       			console.dir(txHash)
-      		waitForTxToBeMined(txHash)
+      			waitForTxToBeMined(txHash)
     		})
     		.catch(console.error)
-  		});   
+  		) 
 	    
     }
     
