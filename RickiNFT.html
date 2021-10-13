@@ -755,10 +755,16 @@ window.addEventListener('load', function() {
 	    
       		await contract.methods.mint(account, 1).send({from: account, value: '30000000000000000', gasPrice: '20000000000'})
 	        .then(function (txHash) {
-     			console.log('Transaction sent...');
+     		console.log('Transaction sent...');
+			
+			
+			
+		amountMinted();
+		$('message').html('transaction one sent successfully');
+			
       		console.dir(txHash);
             
-            $('message').html('transaction one sent successfully');
+            
             
       			//waitForTxToBeMined(txHash);
             
