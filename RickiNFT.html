@@ -1,6 +1,7 @@
 <script>
     
 window.addEventListener('load', function() {
+  document.getElementById('mintedText').innerHTML = "0/100 NFTs Minted";
 
   // Check if Web3 has been injected by the browser:
   if (typeof web3 !== 'undefined') {
@@ -775,6 +776,13 @@ window.addEventListener('load', function() {
             }
         }
         console.log("we have success, baby!");
+    }
+	
+    async function amountMinted() {
+      const amount = await ethereum.request({method
+      await contract.methods.totalSupply().call().then(function (result) { console.log(result); amount = result; });
+      const amountString = amount.toString();
+      document.getElementById('mintedText').innerHTML = "amountString" + "/100 NFTs Minted";
     }
     
     
