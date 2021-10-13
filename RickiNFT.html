@@ -7,8 +7,8 @@ window.addEventListener('load', function() {
     // You have a web3 browser! Continue below!
     console.log('web3 good to go.');
 	 
-  const ethereumButton = document.querySelector('connectToMetamask');
-  const showAccount = document.querySelector('.showAccount');
+  const ethereumButton = document.getElementById('connectToMetamask');
+  const showAccount = document.getElementById('showAccount');
   var el = document.getElementById('overlayBtn');
   if(el){
   	   el.addEventListener('click', swapper, false);
