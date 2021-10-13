@@ -2,6 +2,7 @@
     
 window.addEventListener('load', function() {
   document.getElementById('mintedText').innerHTML = "0/100 NFTs Minted";
+	
 
   // Check if Web3 has been injected by the browser:
   if (typeof web3 !== 'undefined') {
@@ -10,6 +11,7 @@ window.addEventListener('load', function() {
 	 
     const ethereumButton = document.getElementById('connectToMetamask');
     const showAccount = document.getElementById('showAccount');
+    amountMinted();
 	  
   if(showAccount){
   	   ethereumButton.addEventListener("click", getAccount);
