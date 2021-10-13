@@ -7,13 +7,12 @@ window.addEventListener('load', function() {
     // You have a web3 browser! Continue below!
     console.log('web3 good to go.');
 	 
-  const ethereumButton = document.getElementById('connectToMetamask');
-  const showAccount = document.getElementById('showAccount');
-  var el = document.getElementById('overlayBtn');
-  if(el){
-  	   el.addEventListener('click', swapper, false);
+    const ethereumButton = document.getElementById('connectToMetamask');
+    const showAccount = document.getElementById('showAccount');
+	  
+  if(showAccount){
+  	   ethereumButton.addEventListener("click", getAccount);
   }
-  ethereumButton.addEventListener("click", getAccount);
   document.getElementById('message').innerHTML = "another one.";
 	  
 	  
@@ -27,11 +26,11 @@ window.addEventListener('load', function() {
 
 
   
-async function getAccount() {
-  const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-  const account = accounts[0];
-  showAccount.innerHTML = account;
-}
+  async function getAccount() {
+    const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+    const account = accounts[0];
+    showAccount.innerHTML = account;
+  }
   
   var contract;
   
@@ -785,9 +784,9 @@ async function getAccount() {
     {
         mintNFT().then(function () {
           
-			  	$('messageOne').html('transaction one sent successfully');
+	  $('messageOne').html('transaction one sent successfully');
           
-			  });
+	});
         
     })
 	
