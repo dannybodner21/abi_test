@@ -1,11 +1,16 @@
 <script>
-const ethereumButton = document.querySelector('.connectButton');
-const showAccount = document.querySelector('.showAccount');
+
+	
+window.onload=function(){
+    const ethereumButton = document.querySelector('.connectButton');
+    const showAccount = document.querySelector('.showAccount');
+    ethereumButton.addEventListener('click', () => {
+ 	 getAccount();
+    });
+}
 	
 
-ethereumButton.addEventListener('click', () => {
-  getAccount();
-});
+
   
 async function getAccount() {
   const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
