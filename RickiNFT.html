@@ -1,6 +1,24 @@
 <script>
     
+window.addEventListener('load', function() {
 
+  // Check if Web3 has been injected by the browser:
+  if (typeof web3 !== 'undefined') {
+    // You have a web3 browser! Continue below!
+	 
+  const ethereumButton = document.querySelector('.connectToMetamask');
+  const showAccount = document.querySelector('.showAccount');
+  ethereumButton.addEventListener("click", getAccount);
+  document.getElementById('message').innerHTML = "another one.";
+	  
+	  
+    startApp(web3);
+  } else {
+     // Warn the user that they need to get a web3 browser
+     // Or install MetaMask, maybe with a nice graphic.
+  }
+
+})
 	
 
 
@@ -11,19 +29,16 @@ async function getAccount() {
   showAccount.innerHTML = account;
 }
   
-	var contract;
+  var contract;
   
   if (typeof window.ethereum !== 'undefined') {
- 		 console.log('MetaMask is installed!');
-	}
+ 	console.log('MetaMask is installed!');
+  }
   
   $(document).ready(function()
   {
   	web3 = new Web3(web3.currentProvider);
-	const ethereumButton = document.querySelector('.connectToMetamask');
-    	const showAccount = document.querySelector('.showAccount');
-	  
-	ethereumButton.addEventListener("click", getAccount);
+	
 	  
 	
     
@@ -772,7 +787,7 @@ async function getAccount() {
         
     })
 	
-    document.getElementById('message').innerHTML = "It worked.";
+    
 
     
 </script>
