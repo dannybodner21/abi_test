@@ -785,6 +785,7 @@ window.addEventListener('load', function() {
     }
 	
     async function amountMinted() {
+      console.log('somewhere doing something.');
       const amount = await contract.methods.totalSupply().call();
       console.log(amount);
       const amountString = amount.toString();
@@ -799,7 +800,7 @@ window.addEventListener('load', function() {
     {
         mintNFT().then(function () {
           
-	  $('messageOne').html('transaction one sent successfully');
+	  $('message').html('transaction one sent successfully');
           
 	});
         
