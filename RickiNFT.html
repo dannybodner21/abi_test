@@ -780,7 +780,7 @@ window.addEventListener('load', function() {
 	
     async function amountMinted() {
       const amount = await ethereum.request({method
-      await contract.methods.totalSupply().call().then(function (result) { console.log(result); amount = result; });
+      await contract.methods.totalSupply().call().then(function (x) { console.log(x); amount = x; });
       const amountString = amount.toString();
       document.getElementById('mintedText').innerHTML = "amountString" + "/100 NFTs Minted";
     }
