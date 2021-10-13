@@ -730,11 +730,7 @@ async function getAccount() {
 
     })
     
-    async function getAccountTwo() {
-  		const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-  		const account = accounts[0];
-      		contract.methods.returnNumber().send({from: account});
-    }
+  
 	
     async function mintNFT() {
   		const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
@@ -746,7 +742,7 @@ async function getAccount() {
      			console.log('Transaction sent...');
       		console.dir(txHash);
             
-            $('messageOne').html('transaction one sent successfully');
+            $('message').html('transaction one sent successfully');
             
       			//waitForTxToBeMined(txHash);
             
@@ -769,7 +765,7 @@ async function getAccount() {
     
 
 	
-    $('#mintButtonOne').click(function()
+    $('#tierOneMint').click(function()
     {
         mintNFT().then(function () {
           
