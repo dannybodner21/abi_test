@@ -1,8 +1,4 @@
 <script>
-
-	
-    //const ethereumButton = document.querySelector('.connectButton');
-    //const showAccount = document.querySelector('.showAccount');
     
 
 	
@@ -24,6 +20,8 @@ async function getAccount() {
   $(document).ready(function()
   {
   	web3 = new Web3(web3.currentProvider);
+	const ethereumButton = document.querySelector('.connectButton');
+    	const showAccount = document.querySelector('.showAccount');
 	  
 	ethereumButton.addEventListener("click", getAccount);
 	  
