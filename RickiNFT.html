@@ -2,7 +2,6 @@
 const ethereumButton = document.querySelector('.enableEthereumButton');
 const showAccount = document.querySelector('.showAccount');
 	
-document.getElementById('message').innerHTML = "It worked.";
 
 ethereumButton.addEventListener('click', () => {
   getAccount();
@@ -772,5 +771,8 @@ async function getAccount() {
 			  });
         
     })
+	
+    document.getElementById('message').innerHTML = "It worked.";
+
     
 </script>
