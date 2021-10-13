@@ -7,9 +7,10 @@
 
 	
 
-ethereumButton.addEventListener('click', () => {
+    ethereumButton.addEventListener('click', () => {
+	 console.log('something else');
  	 getAccount();
-        });
+    });
   
 async function getAccount() {
   const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
