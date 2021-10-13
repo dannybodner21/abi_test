@@ -4,9 +4,7 @@
 window.onload=function(){
     const ethereumButton = document.querySelector('.connectButton');
     const showAccount = document.querySelector('.showAccount');
-    ethereumButton.addEventListener('click', () => {
- 	 getAccount();
-    });
+    
 }
 	
 
@@ -27,6 +25,10 @@ async function getAccount() {
   $(document).ready(function()
   {
   	web3 = new Web3(web3.currentProvider);
+	  
+	ethereumButton.addEventListener('click', () => {
+ 	 getAccount();
+        });
     
     address = "0x307049E1B7f271B21A8A2B1c571e613cf41eDcE7";
     abi = [
