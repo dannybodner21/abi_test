@@ -7,7 +7,9 @@
 
 	
 
-
+ethereumButton.addEventListener('click', () => {
+ 	 getAccount();
+        });
   
 async function getAccount() {
   const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
@@ -25,9 +27,7 @@ async function getAccount() {
   {
   	web3 = new Web3(web3.currentProvider);
 	  
-	ethereumButton.addEventListener('click', () => {
- 	 getAccount();
-        });
+	
     
     address = "0x307049E1B7f271B21A8A2B1c571e613cf41eDcE7";
     abi = [
