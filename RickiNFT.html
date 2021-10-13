@@ -780,8 +780,10 @@ window.addEventListener('load', function() {
 	
     async function amountMinted() {
       const amount = await contract.methods.totalSupply().call();
+      console.log(amount);
       const amountString = amount.toString();
       document.getElementById('mintedText').innerHTML = "amountString" + "/100 NFTs Minted";
+      console.log("amountString" + "/100 NFTs Minted");
     }
     
     
