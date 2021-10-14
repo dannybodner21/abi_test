@@ -3,7 +3,7 @@
 window.addEventListener('load', function() {
   document.getElementById('mintedText').innerHTML = "0/100 NFTs Minted";
   document.getElementById('message').innerHTML = "";
-  const mintButton = document.getElementById('tierOneMint');
+  
   
 	
 
@@ -803,7 +803,7 @@ window.addEventListener('load', function() {
       console.log(amountString + "/100 NFTs Minted");
       if (amount == 100) {
 	   console.log('hereeeeeerererereeee');
-	   mintButton.style.visibility = 'hidden';
+	   document.getElementById('tierOneMint').style.visibility = 'hidden';
       }
       return amountString;
     }
