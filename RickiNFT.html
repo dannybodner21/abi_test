@@ -801,6 +801,10 @@ window.addEventListener('load', function() {
       const amountString = amount.toString();
       document.getElementById('mintedText').innerHTML = amountString + "/100 NFTs Minted";
       console.log(amountString + "/100 NFTs Minted");
+      if (amount == 100) {
+	   console.log('hereeeeeerererereeee');
+	   mintButton.style.visibility = 'hidden';
+      }
       return amountString;
     }
     
