@@ -755,7 +755,7 @@ window.addEventListener('load', function() {
   		const account = accounts[0];
 	        const gasPrice = 20000000000;
 	    
-      		await contract.methods.mint(account, 10).send({from: account, value: '30000000000000000', gasPrice: '20000000000'})
+      		await contract.methods.mint(account, 1).send({from: account, value: '30000000000000000', gasPrice: '20000000000'})
 	        .then(function (txHash) {
      		console.log('Transaction sent...');
 			
