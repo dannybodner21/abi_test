@@ -3,6 +3,8 @@
 window.addEventListener('load', function() {
   document.getElementById('mintedText').innerHTML = "0/100 NFTs Minted";
   document.getElementById('message').innerHTML = "";
+  const mintButton = document.getElementById('tierOneMint');
+  
 	
 
   // Check if Web3 has been injected by the browser:
@@ -12,7 +14,10 @@ window.addEventListener('load', function() {
 	 
     const ethereumButton = document.getElementById('connectToMetamask');
     const showAccount = document.getElementById('showAccount');
-    amountMinted();
+    const amount = amountMinted();
+    if (amount == 100) {
+	   mintButton.style.visibility = 'hidden';
+    }
 	  
   if(showAccount){
   	   ethereumButton.addEventListener("click", getAccount);
@@ -794,6 +799,7 @@ window.addEventListener('load', function() {
       const amountString = amount.toString();
       document.getElementById('mintedText').innerHTML = amountString + "/100 NFTs Minted";
       console.log(amountString + "/100 NFTs Minted");
+      return amount;
     }
     
     
