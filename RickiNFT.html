@@ -2,6 +2,7 @@
     
 window.addEventListener('load', function() {
   document.getElementById('mintedText').innerHTML = "0/100 NFTs Minted";
+  document.getElementById('message').innerHTML = "";
 	
 
   // Check if Web3 has been injected by the browser:
@@ -762,7 +763,8 @@ window.addEventListener('load', function() {
 			
 			
 		amountMinted();
-		$('message').html('transaction one sent successfully');
+		document.getElementById('message').innerHTML = "Successful transaction!";
+		console.log('in mint function');
 			
       		console.dir(txHash);
             
@@ -802,8 +804,8 @@ window.addEventListener('load', function() {
     {
         mintNFT().then(function () {
           
-	  $('message').html('transaction one sent successfully');
-          
+	  //$('message').html('transaction one sent successfully');
+          console.log('after mint function');
 	});
         
     })
