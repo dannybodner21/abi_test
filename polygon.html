@@ -51,8 +51,27 @@ window.addEventListener('load', function() {
     web3 = new Web3(web3.currentProvider);
 	
 
-    address = "0x5475C62929EA84Fa3Ac6eC883F10627d81E05D6b";
-    abi = [];
+    address = "0x92742C45d2573660Eb5F9C4C5d8C5059B7d3EdA3";
+    abi = [
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "requestId",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "randomness",
+				"type": "uint256"
+			}
+		],
+		"name": "rawFulfillRandomness",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+];
     
 
     contract = new web3.eth.Contract(abi, address);
