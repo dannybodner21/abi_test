@@ -19,6 +19,8 @@ window.addEventListener('load', function() {
     const amount = amountMinted();
     
     console.log(amount);
+	  
+    document.getElementById('mintedText').innerHTML = amount + "/10 NFTs Minted";
     
     if (amount == '10') {
 	    document.getElementById('mintButton').style.visibility = 'hidden';
@@ -117,7 +119,7 @@ window.addEventListener('load', function() {
       return amountString;
     }
     
-    $('#tierOneMint').click(function()
+    $('#mintButton').click(function()
     {
         mintNFT();
     })
