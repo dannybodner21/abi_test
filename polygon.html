@@ -3,7 +3,7 @@
 window.addEventListener('load', function() {
   
   // amount minted label
-  document.getElementById('mintedText').innerHTML = "0/10 NFTs Minted";
+  document.getElementById('mintedText').innerHTML = "Total Minted: 0/10";
   
   // message label
   document.getElementById('message').innerHTML = "";
@@ -20,7 +20,7 @@ window.addEventListener('load', function() {
     
     console.log(amount);
 	  
-    document.getElementById('mintedText').innerHTML = amount + "/10 NFTs Minted";
+    document.getElementById('mintedText').innerHTML = "Total Minted: " + amount + "/10";
     
     if (amount == '10') {
 	    document.getElementById('mintButton').style.visibility = 'hidden';
