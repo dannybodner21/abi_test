@@ -38,9 +38,8 @@ window.addEventListener('load', function() {
     if (result > 0) {
       // Rhino confirmed
       console.log("owns atleast one Rhino");
-      const overlaySection = document.getElementById('overlay-section');
-      overlaySection.style.display = "none";
-      
+      document.getElementById('overlay-section').style.visibility = 'hidden';
+	         
     } else {
       // Rhino denied
       console.log("doesn't own a Rhino");
