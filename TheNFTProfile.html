@@ -978,17 +978,6 @@ window.addEventListener('load', function() {
 
     })
     
-    async function amountMinted() {
-      const amount = await contract.methods.totalSupply().call();
-      const amountString = amount.toString();
-      document.getElementById('mintedText').innerHTML = amountString + "/10 NFTs Minted";
 
-      return amountString;
-    }
-    
-    $('#mintButton').click(function()
-    {
-        mintNFT();
-    })
 
 </script>
