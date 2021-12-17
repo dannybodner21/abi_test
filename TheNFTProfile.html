@@ -26,7 +26,7 @@ window.addEventListener('load', function() {
 })
 	
   async function findRhino() {
-    console.log("right here");
+	  
     // user's wallet address
     const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
     const account = accounts[0];
@@ -37,12 +37,14 @@ window.addEventListener('load', function() {
     
     if (result > 0) {
       // Rhino confirmed
-      console.log("owns a Rhino");
+      console.log("owns atleast one Rhino");
+      const overlaySection = document.getElementById('overlay-section');
+      overlaySection.style.display = "none";
       
     } else {
       // Rhino denied
       console.log("doesn't own a Rhino");
-      
+      window.alert("You don't have a Rhino. Go buy one!");
     }
   }
   
