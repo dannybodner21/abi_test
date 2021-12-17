@@ -32,18 +32,18 @@ window.addEventListener('load', function() {
     const account = accounts[0];
     
     // check for Rhino
-    //const result = await contract.methods.balanceOf(account).call();
-    //console.log(result);
+    const result = await contract.methods.balanceOf(account).call();
+    console.log(result);
     
-    //if (result > 0) {
+    if (result > 0) {
       // Rhino confirmed
-      //console.log("owns a Rhino");
+      console.log("owns a Rhino");
       
-    //} else {
+    } else {
       // Rhino denied
-      //console.log("doesn't own a Rhino");
+      console.log("doesn't own a Rhino");
       
-    //}
+    }
   }
   
   var contract;
