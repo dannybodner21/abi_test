@@ -33,7 +33,9 @@ window.addEventListener('load', function() {
     
     // check for Rhino
     const result = await contract.methods.balanceOf(account).call();
+    const wallet = await contract.methods.walletOfOwner(account).call();
     console.log(result);
+    console.log(wallet);
     
     if (result > 0) {
       // Rhino confirmed
