@@ -34,8 +34,6 @@ window.addEventListener('load', function() {
     // check for Rhino
     const result = await contract.methods.balanceOf(account).call();
     const wallet = await contract.methods.walletOfOwner(account).call();
-    console.log(result);
-    console.log(wallet[0]);
     
     if (result > 0) {
       // Rhino confirmed
@@ -43,7 +41,7 @@ window.addEventListener('load', function() {
       document.getElementById('overlay-section').style.visibility = 'hidden';
       document.getElementById('ethereum-wallet-address').value = account;
       document.getElementById('rhino-number').value = wallet[0];
-      console.log('working');
+      $("rhino-number").prop(‘disabled’, true);
 	         
     } else {
       // Rhino denied
