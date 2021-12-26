@@ -3,7 +3,7 @@
 window.addEventListener('load', function() {
   
   // amount minted label
-  document.getElementById('mintedText').innerHTML = "Total Minted: 0/10,000";
+  document.getElementById('mintedText').innerHTML = "Loading...";
   
   // message label
   document.getElementById('message').innerHTML = "";
@@ -19,13 +19,6 @@ window.addEventListener('load', function() {
     const amount = amountMinted();
     
     console.log(amount);
-	  
-    document.getElementById('mintedText').innerHTML = "Total Minted: " + amount + "/10";
-    
-    if (amount == '10') {
-	    document.getElementById('mintButton').style.visibility = 'hidden';
-	    document.getElementById('message').innerHTML = "All Rhinos have been minted.";
-    }
 	  
     if(showAccount) {
   	   ethereumButton.addEventListener("click", getAccount);
@@ -1011,6 +1004,7 @@ window.addEventListener('load', function() {
       document.getElementById('mintedText').innerHTML = amountString + "/10 NFTs Minted";
       if (amount == 10) {
 	      document.getElementById('mintButton').style.visibility = 'hidden';
+	      document.getElementById('message').innerHTML = "All Rhinos have been minted.";
       }
       return amountString;
     }
