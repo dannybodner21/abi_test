@@ -113,7 +113,7 @@ async function doThings() {
 	//const web3 = new Web3(ethereum);
 	    
         //let web3 = new Web3(ethereum);
-	web3 = new Web3(web3.currentProvider);
+	//web3 = new Web3(web3.currentProvider);
 	
 	try {
 		// button to manually connect metamask
@@ -155,15 +155,18 @@ async function doThings() {
   
   $(document).ready(function()
   {
-    //web3 = new Web3(web3.currentProvider);
+    	//web3 = new Web3(web3.currentProvider);
+	  
+	//const web3 = new Web3(ethereum);
+	    
+        let web3 = new Web3(ethereum);
+	//web3 = new Web3(web3.currentProvider);
     
-    var contract;
+    	var contract;
 	  
-    console.log("one");
-	  
-    contract = connectToContract();
-	  
-    console.log("connected to contract");
+    	console.log("starting");
+    	contract = connectToContract();
+   	console.log("connected to contract");
   })
     
     async function mintNFT() {
