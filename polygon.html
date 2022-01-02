@@ -85,22 +85,22 @@ window.addEventListener('load', function() {
     		}
 		
 		// get total amount of NFTs minted thus far
-    		const amount = amountMinted().then(
+    		const amount = amountMinted().then({
 			console.log("amount:");
     			console.log(amount);	
-		).then(
+		}).then({
 			console.log("running get account now");
 	    		getAccount();
 			console.log("done running get account");
-		).then(
+   		}).then({
 			console.log("running get network id now");
             		networkId = getNetworkId();
 			console.log("done running get network id");
-		).then(
+  		}).then({
 			console.log("running connect to polygon now");
 	    		connectToPolygon();
 			console.log("done running connect to polygon");
-		);
+		});
     		
 		
 		
