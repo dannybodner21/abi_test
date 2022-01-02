@@ -2,28 +2,28 @@
     
 window.addEventListener('load', function() {
   
-  // amount minted label
+  // amount minted label - set to loading until ready for minting
   document.getElementById('mintedText').innerHTML = "Loading...";
   
-  // message label
+  // message label - used to explain to user (successful transactions, etc.)
   document.getElementById('message').innerHTML = "";
   
   // Check if Web3 has been injected by the browser:
   if (typeof web3 !== 'undefined') {
     
     // You have a web3 browser
-    console.log('web3 connected');
+    //console.log('web3 connected');
 	 
-    const ethereumButton = document.getElementById('connectToMetamask');
-    const showAccount = document.getElementById('showAccount');
-    const amount = amountMinted();
+    //const ethereumButton = document.getElementById('connectToMetamask');
+    //const showAccount = document.getElementById('showAccount');
+    //const amount = amountMinted();
     
-    console.log("amount:");
-    console.log(amount);
+    //console.log("amount:");
+    //console.log(amount);
 	  
-    if(showAccount) {
-  	   ethereumButton.addEventListener("click", getAccount);
-    }
+    //if(showAccount) {
+  	   //ethereumButton.addEventListener("click", getAccount);
+    //}
 	   
   } else {
      // Warn the user that they need to get a web3 browser
@@ -73,15 +73,34 @@ window.addEventListener('load', function() {
         let web3 = new Web3(ethereum);
 	var contract;
 	try {
-	    //const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-	    getAccount();
-            networkId = getNetworkId();
+		// button to manually connect metamask
+		const ethereumButton = document.getElementById('connectToMetamask');
+		// if we can find the ethereum button, connect it to get account info function
+		if(showAccount) {
+  	   		ethereumButton.addEventListener("click", getAccount);
+    		}
 		
-	    connectToPolygon();
+		// label to show user's address
+    		const showAccount = document.getElementById('showAccount');
+		
+		// get total amount of NFTs minted thus far
+    		const amount = amountMinted();
+    		console.log("amount:");
+    		console.log(amount);
+		
+		console.log("running get account now");
+	    	getAccount();
+		console.log("done running get account");
+		console.log("running get network id now");
+            	networkId = getNetworkId();
+		console.log("done running get network id");
+		console.log("running connect to polygon now");
+	    	connectToPolygon();
+		console.log("done running connect to polygon");
             
 	} catch (error) {
-	    console.log("in the catch...");
-            console.log(error);
+	    	console.log("in the catch...");
+            	console.log(error);
 	}
     }
   }
