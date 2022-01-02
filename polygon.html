@@ -48,26 +48,15 @@ window.addEventListener('load', function() {
 	    return networkId;
 	  
   }
-  
-  var contract;
-  
-  if (typeof window.ethereum !== 'undefined') {
-    console.log('MetaMask is installed!');
-  }
-  
-  $(document).ready(function()
-  {
-    //web3 = new Web3(web3.currentProvider);
-    
-	  
-    console.log("one-------");
-	  
+	
+  async function connectToContract() {
     const { ethereum } = window;
     const metamaskIsInstalled = ethereum && ethereum.isMetaMask;
     if (metamaskIsInstalled) {
 	console.log("meta mask installed");
 	    
         let web3 = new Web3(ethereum);
+	var contract;
 	try {
 	    //const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	    getAccount();
@@ -92,6 +81,24 @@ window.addEventListener('load', function() {
             console.log(error);
 	}
     }
+  }
+  
+  
+  
+  if (typeof window.ethereum !== 'undefined') {
+    console.log('MetaMask is installed!');
+  }
+  
+  $(document).ready(function()
+  {
+    //web3 = new Web3(web3.currentProvider);
+    
+ 
+    console.log("one");
+	  
+    connectToContract();
+	  
+    console.log("connected to contract");
   })
     
     async function mintNFT() {
