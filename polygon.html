@@ -83,17 +83,14 @@ window.addEventListener('load', function() {
     		     contract = new web3.eth.Contract(abi, address);
 		    
 		    console.log("contract is good to go");
+	    } else {
+	        console.log("not on Polygon");
+		window.alert("please switch to the Polygon network");
 	    }
-	catch{
+	} catch (error) {
 	    console.log("in the catch...");
+            console.log(error);
 	}
-	}
-	
-
-
-
-    
-
     })
     
     async function mintNFT() {
