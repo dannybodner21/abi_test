@@ -104,7 +104,7 @@ async function doThings() {
   }
 	
   async function connectToContract() {
-    const { ethereum } = window;
+    //const { ethereum } = window;
     const metamaskIsInstalled = ethereum && ethereum.isMetaMask;
     if (metamaskIsInstalled) {
 	console.log("meta mask installed");
@@ -115,7 +115,7 @@ async function doThings() {
         //let web3 = new Web3(ethereum);
 	//web3 = new Web3(web3.currentProvider);
 	    
-	state.web3 = new Web3(ethereum);
+	//web3 = new Web3(ethereum);
 	
 	try {
 		await ethereum.enable();
@@ -159,12 +159,12 @@ async function doThings() {
   
   $(document).ready(function()
   {
+	const { ethereum } = window;
+	  
     	//web3 = new Web3(web3.currentProvider);
 	  
-	//const web3 = new Web3(ethereum);
 	    
-        //let web3 = new Web3(ethereum);
-	//web3 = new Web3(web3.currentProvider);
+        let web3 = new Web3(ethereum);
     
     	var contract;
 	  
