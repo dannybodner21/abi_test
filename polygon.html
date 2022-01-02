@@ -35,8 +35,8 @@ window.addEventListener('load', function() {
   //deleting async keyword to test if we need it
   function getAccount() {
 	console.log("running get account now");
-    	//const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-	const accounts = ethereum.request({ method: 'eth_requestAccounts' });
+    	const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+	//const accounts = ethereum.request({ method: 'eth_requestAccounts' });
     	const account = accounts[0];
     	showAccount.innerHTML = account;
 	  
