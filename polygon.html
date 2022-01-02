@@ -84,15 +84,11 @@ window.addEventListener('load', function() {
   	   		ethereumButton.addEventListener("click", getAccount);
     		}
 		
-		// get total amount of NFTs minted thus far
-    		const amount = amountMinted().then( response => {
-			console.log("amount:");
-    			console.log(amount);	
-		}).then( response => {
-			console.log("running get account now");
-	    		getAccount();
+	
+	
+		console.log("running get account now");
+	    	getAccount().then( response => {
 			console.log("done running get account");
-   		}).then( response => {
 			console.log("running get network id now");
             		networkId = getNetworkId();
 			console.log("done running get network id");
@@ -100,6 +96,10 @@ window.addEventListener('load', function() {
 			console.log("running connect to polygon now");
 	    		connectToPolygon();
 			console.log("done running connect to polygon");
+		}).then( response => {
+			console.log("running amount minted:");
+			const amount = amountMinted(contract);	    
+			console.log(amount);
 		});
     		
 		
@@ -156,7 +156,7 @@ window.addEventListener('load', function() {
         }
     }
 	
-    async function amountMinted() {
+    async function amountMinted (contract) {
       const amount = await contract.methods.totalSupply().call();
       const amountString = amount.toString();
       document.getElementById('mintedText').innerHTML = amountString + "/10,000 NFTs Minted";
