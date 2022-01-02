@@ -75,13 +75,14 @@ window.addEventListener('load', function() {
 	try {
 		// button to manually connect metamask
 		const ethereumButton = document.getElementById('connectToMetamask');
-		// if we can find the ethereum button, connect it to get account info function
-		if(showAccount) {
-  	   		ethereumButton.addEventListener("click", getAccount);
-    		}
 		
 		// label to show user's address
     		const showAccount = document.getElementById('showAccount');
+		
+		// if we can find the ethereum button, connect it to get account info function
+		if(showAccount && ethereumButton) {
+  	   		ethereumButton.addEventListener("click", getAccount);
+    		}
 		
 		// get total amount of NFTs minted thus far
     		const amount = amountMinted();
