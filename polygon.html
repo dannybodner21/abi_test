@@ -114,8 +114,12 @@ async function doThings() {
 	    
         //let web3 = new Web3(ethereum);
 	//web3 = new Web3(web3.currentProvider);
+	    
+	state.web3 = new Web3(ethereum);
 	
 	try {
+		await ethereum.enable();
+		
 		// button to manually connect metamask
 		const ethereumButton = document.getElementById('connectToMetamask');
 		
