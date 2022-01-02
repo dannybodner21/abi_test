@@ -26,7 +26,7 @@ window.addEventListener('load', function() {
   }
 })
 	
-  async function findRhino() {
+  async function findRhino(contract) {
 	  
 	  
 	const { ethereum } = window;
@@ -76,7 +76,7 @@ window.addEventListener('load', function() {
     		const contract = new web3.eth.Contract(abi, address);
 		const connectButton = document.getElementById('connect-button');
 		connectButton.disabled = false;
-		findRhino();
+		findRhino(contract);
 	} else {
 		console.log("metamask is not installed");
 		window.alert("Metamask is not installed.");
