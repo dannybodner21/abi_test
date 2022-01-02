@@ -110,7 +110,6 @@ async function doThings() {
 	console.log("meta mask installed");
 	    
 	//Web3EthContract.setProvider(ethereum);
-	const Web3 = require('web3');
 	//const web3 = new Web3(ethereum);
         let web3 = new Web3(ethereum);
 	
@@ -166,8 +165,9 @@ async function doThings() {
   })
     
     async function mintNFT() {
-  		const account = accounts[0];
+  		
   		const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+	    	const account = accounts[0];
 	    
       		await contract.methods.mint(account, 1).send({from: account, value: '30000000000000000', gasPrice: '20000000000'})
 	        .then(function (txHash) {
