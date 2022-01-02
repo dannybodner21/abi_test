@@ -111,7 +111,9 @@ async function doThings() {
 	    
 	//Web3EthContract.setProvider(ethereum);
 	//const web3 = new Web3(ethereum);
-        let web3 = new Web3(ethereum);
+	    
+        //let web3 = new Web3(ethereum);
+	web3 = new Web3(web3.currentProvider);
 	
 	try {
 		// button to manually connect metamask
