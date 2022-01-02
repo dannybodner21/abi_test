@@ -85,19 +85,27 @@ window.addEventListener('load', function() {
     		}
 		
 		// get total amount of NFTs minted thus far
-    		const amount = amountMinted();
-    		console.log("amount:");
-    		console.log(amount);
+    		const amount = amountMinted().then(
+			console.log("amount:");
+    			console.log(amount);	
+		).then(
+			console.log("running get account now");
+	    		getAccount();
+			console.log("done running get account");
+		).then(
+			console.log("running get network id now");
+            		networkId = getNetworkId();
+			console.log("done running get network id");
+		).then(
+			console.log("running connect to polygon now");
+	    		connectToPolygon();
+			console.log("done running connect to polygon");
+		);
+    		
 		
-		console.log("running get account now");
-	    	getAccount();
-		console.log("done running get account");
-		console.log("running get network id now");
-            	networkId = getNetworkId();
-		console.log("done running get network id");
-		console.log("running connect to polygon now");
-	    	connectToPolygon();
-		console.log("done running connect to polygon");
+		
+		
+		
             
 	} catch (error) {
 	    	console.log("in the catch...");
