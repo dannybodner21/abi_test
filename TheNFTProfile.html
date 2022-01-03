@@ -51,6 +51,12 @@ window.addEventListener('load', function() {
       				document.getElementById('ethereum-wallet-address').value = account;
       				document.getElementById('rhino-number').value = wallet[0];
       				//$("rhino-number").prop(‘disabled’, true);
+				
+				// populate the dropdown menu with all the user's rhinos
+				dropdown = document.getElementById('rhinoDropdown');
+                  		for (let i = 0; i < wallet.length; i++) {
+                    			dropdown.innerHTML += '<option>' + wallet[i] + '</option>';
+                 		 }
 	         
     			} else {
       				// Rhino denied
