@@ -9,6 +9,11 @@ window.addEventListener('load', function() {
   document.getElementById('message').innerHTML = "";
 	
   var contract;
+  var count = 1;
+	
+  // plus and minus buttons
+  document.querySelector('#plusOneButton').addEventListener('click', () => plusOne());
+  document.querySelector('#minusOneButton').addEventListener('click', () => minusOne());
   
 })
 	
@@ -16,6 +21,20 @@ async function getAccount() {
     const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
     const account = accounts[0];
     showAccount.innerHTML = account;
+}
+	
+function plusOne() {
+	if (count < 5) {
+		count++;
+	}
+	console.log(count);
+}
+	
+function minusOne() {
+	if (count > 1) {
+		count--;
+	}
+	console.log(count);
 }
 	
 async function doThings() {
@@ -952,7 +971,7 @@ async function doThings() {
 	    const isPaused = await contract.methods.paused().call();
 	    if (isPaused) {
 		// disable mint button and show paused label
-		document.getElementById('mintButton').disabled = true;
+		document.getElementById('mintButton').style.visibility = 'hidden';
 	        document.getElementById('message').innerHTML = "Minting is currently paused.";
 		console.log("paused");
 	  }
