@@ -886,7 +886,8 @@ async function doThings() {
 		    
 				console.log("contract is good to go");
 				amountMinted(contract);
-				
+				// check if contract is paused
+	  			paused(contract);
 	      			return contract;
       			} else {
 	        		console.log("not on correct network");
@@ -909,8 +910,7 @@ async function doThings() {
       let web3 = new Web3(ethereum);	  
     	contract = doThings();
    	  console.log("connected to contract");
-	  // check if contract is paused
-	  paused(contract);
+	  
   })
     
     async function mintNFT(contract) {
