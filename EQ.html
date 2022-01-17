@@ -922,7 +922,7 @@ async function doThings() {
 		mintPrice = '330000000000000000';
 	}
 	    
-      await contract.methods.mint(account, 1).send({from: account, value: mintPrice, gasPrice: '20000000000'})
+      await contract.methods.mint(account, 1).send({from: account, value: '220000000000000000', gasPrice: '20000000000'})
 	    .then(function (txHash) {
 			
 		    amountMinted();
