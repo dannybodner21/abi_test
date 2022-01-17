@@ -6,7 +6,7 @@ window.addEventListener('load', function() {
   // document.getElementById('mintedText').innerHTML = "Loading...";
   
   // message label - used to explain to user (successful transactions, etc.)
-  document.getElementById('message').innerHTML = "";
+  //document.getElementById('message').innerHTML = "";
   
 })
 	
@@ -883,6 +883,7 @@ async function doThings() {
 		
 		    
 				console.log("contract is good to go");
+				amountMinted();
 	      			return contract;
       			} else {
 	        		console.log("not on correct network");
@@ -911,10 +912,15 @@ async function doThings() {
     
     async function mintNFT() {
   		
-  		const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-	    const account = accounts[0];
+  	const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+	const account = accounts[0];
+	const mintPrice = '220000000000000000';
+	const amount = await contract.methods.totalSupply().call();
+	if (amount > 88) {
+		mintPrice = '330000000000000000';
+	}
 	    
-      await contract.methods.mint(account, 1).send({from: account, value: '220000000000000000', gasPrice: '20000000000'})
+      await contract.methods.mint(account, 1).send({from: account, value: mintPrice, gasPrice: '20000000000'})
 	    .then(function (txHash) {
 			
 		    amountMinted();
@@ -942,8 +948,8 @@ async function doThings() {
     async function amountMinted (contract) {
       const amount = await contract.methods.totalSupply().call();
       const amountString = amount.toString();
-      //document.getElementById('mintedText').innerHTML = amountString + "/100 NFTs Minted";
-      if (amount == 100) {
+      //document.getElementById('mintedText').innerHTML = amountString + "/264 NFTs Minted";
+      if (amount == 264) {
 	      document.getElementById('mintButton').style.visibility = 'hidden';
 	      //document.getElementById('message').innerHTML = "All NFTs have been minted.";
       }
