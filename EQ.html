@@ -886,6 +886,7 @@ async function doThings() {
 		    
 				console.log("contract is good to go");
 				amountMinted(contract);
+				
 	      			return contract;
       			} else {
 	        		console.log("not on correct network");
@@ -905,11 +906,17 @@ async function doThings() {
   $(document).ready(function()
   {
 	const { ethereum } = window;
-      let web3 = new Web3(ethereum);
-    	//var contract;
-	  
+      let web3 = new Web3(ethereum);	  
     	contract = doThings();
    	  console.log("connected to contract");
+	  // check if contract is paused
+	  const isPaused = await contract.methods.paused().call();
+	  if (isPaused) {
+		// disable mint button and show paused label
+		document.getElementById('mintButton').style.disabled = true;
+	        document.getElementById('message').innerHTML = "Minting is currently disabled.";
+		console.log("paused");
+	  }
   })
     
     async function mintNFT(contract) {
