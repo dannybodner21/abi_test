@@ -910,13 +910,7 @@ async function doThings() {
     	contract = doThings();
    	  console.log("connected to contract");
 	  // check if contract is paused
-	  const isPaused = await contract.methods.paused().call();
-	  if (isPaused) {
-		// disable mint button and show paused label
-		document.getElementById('mintButton').style.disabled = true;
-	        document.getElementById('message').innerHTML = "Minting is currently disabled.";
-		console.log("paused");
-	  }
+	  paused(contract);
   })
     
     async function mintNFT(contract) {
@@ -952,6 +946,16 @@ async function doThings() {
                 return console.log(err)
             }
         }
+    }
+	
+    async function paused(contract) {
+	    const isPaused = await contract.methods.paused().call();
+	    if (isPaused) {
+		// disable mint button and show paused label
+		document.getElementById('mintButton').style.disabled = true;
+	        document.getElementById('message').innerHTML = "Minting is currently disabled.";
+		console.log("paused");
+	  }
     }
 	
     async function amountMinted (contract) {
