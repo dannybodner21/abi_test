@@ -7,6 +7,8 @@ window.addEventListener('load', function() {
   
   // message label - used to explain to user (successful transactions, etc.)
   document.getElementById('message').innerHTML = "";
+	
+  var contract;
   
 })
 	
@@ -879,7 +881,7 @@ async function doThings() {
       "type": "function"
     }
   ];
-        const contract = new web3.eth.Contract(abi, address);
+        contract = new web3.eth.Contract(abi, address);
 		
 		    
 				console.log("contract is good to go");
@@ -904,13 +906,13 @@ async function doThings() {
   {
 	const { ethereum } = window;
       let web3 = new Web3(ethereum);
-    	var contract;
+    	//var contract;
 	  
     	contract = doThings();
    	  console.log("connected to contract");
   })
     
-    async function mintNFT() {
+    async function mintNFT(contract) {
   		
   	const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	const account = accounts[0];
@@ -958,7 +960,7 @@ async function doThings() {
     
     $('#mintButton').click(function()
     {
-        mintNFT();
+        mintNFT(contract);
     })
 
 </script>
