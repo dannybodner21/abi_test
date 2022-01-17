@@ -8,14 +8,16 @@ window.addEventListener('load', function() {
   // message label - used to explain to user (successful transactions, etc.)
   document.getElementById('message').innerHTML = "";
 	
-  var contract;
-  var count = 1;
+  
 	
   // plus and minus buttons
   document.querySelector('#plusOneButton').addEventListener('click', () => plusOne());
   document.querySelector('#minusOneButton').addEventListener('click', () => minusOne());
   
 })
+
+var contract;
+var count = 1;
 	
 async function getAccount() {
     const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
