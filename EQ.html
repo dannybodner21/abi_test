@@ -29,17 +29,17 @@ async function getAccount() {
 function plusOne() {
 	if (count < 4) {
 		count++;
+		document.getElementById('mintButton').innerText = "mint " + string(count);
 	}
 	console.log(count);
-	document.getElementById('mintButton').innerText = "mint " + string(count);
 }
 	
 function minusOne() {
 	if (count > 1) {
 		count--;
+		document.getElementById('mintButton').innerText = "mint " + string(count);
 	}
 	console.log(count);
-	document.getElementById('mintButton').innerText = "mint " + string(count);
 }
 	
 async function doThings() {
@@ -947,7 +947,7 @@ async function doThings() {
 		mintPrice = '330000000000000000';
 	}
 	    
-      await contract.methods.mint(1).send({from: account, value: mintPrice, gasPrice: '20000000000'})
+      await contract.methods.mint(count).send({from: account, value: mintPrice, gasPrice: '20000000000'})
 	    .then(function (txHash) {
 			
 		    amountMinted();
