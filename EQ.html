@@ -948,8 +948,9 @@ async function doThings() {
   	const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	const account = accounts[0];
 	var mintPrice = '220000000000000000';
-	const amount = await contract.methods.totalSupply().call();
-	if (amount > 176) {
+	// const amount = await contract.methods.totalSupply().call();
+	const isPresale = await contract.methods.onlyPresale().call();
+	if (!isPresale) {
 		mintPrice = '330000000000000000';
 	}
 	mintPrice = mintPrice * count;
