@@ -986,6 +986,9 @@ async function doThings() {
 		// disable mint button and show paused label
 		document.getElementById('mintButton').style.visibility = 'hidden';
 	        document.getElementById('message').innerHTML = "Minting is currently paused.";
+		// disable the plus and minus buttons
+		document.getElementById('plusOneButton').style.visibility = 'hidden';
+		document.getElementById('minusOneButton').style.visibility = 'hidden';
 		console.log("paused");
 	  }
     }
