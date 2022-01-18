@@ -8,11 +8,12 @@ window.addEventListener('load', function() {
   // message label - used to explain to user (successful transactions, etc.)
   document.getElementById('message').innerHTML = "";
 	
-  
-	
   // plus and minus buttons
   document.querySelector('#plusOneButton').addEventListener('click', () => plusOne());
   document.querySelector('#minusOneButton').addEventListener('click', () => minusOne());
+	
+  // mint button text
+  document.getElementById('mintButton').innerText = "this is a test";
   
 })
 
