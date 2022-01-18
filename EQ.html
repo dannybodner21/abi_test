@@ -13,7 +13,7 @@ window.addEventListener('load', function() {
   document.querySelector('#minusOneButton').addEventListener('click', () => minusOne());
 	
   // mint button text
-  document.getElementById('mintButton').innerText = "this is a test";
+  document.getElementById('mintButton').innerText = "mint 1";
   
 })
 
@@ -31,6 +31,7 @@ function plusOne() {
 		count++;
 	}
 	console.log(count);
+	document.getElementById('mintButton').innerText = "mint " + string(count);
 }
 	
 function minusOne() {
@@ -38,6 +39,7 @@ function minusOne() {
 		count--;
 	}
 	console.log(count);
+	document.getElementById('mintButton').innerText = "mint " + string(count);
 }
 	
 async function doThings() {
