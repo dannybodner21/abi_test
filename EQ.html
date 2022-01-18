@@ -71,10 +71,10 @@ async function doThings() {
 			console.log("getting network id");
 			const networkId = await ethereum.request({ method: 'net_version' });
 			console.log(networkId);
-			console.log("checking ethereum rinkeby test network");
+			console.log("checking ethereum network");
       
 			if (networkId == 4) {
-				console.log("network is good to go - rinkeby");
+				console.log("network is good to go");
 		    
 				address = "0x63b5E9413128fFf29a64A8909c0E25280755a342";
     		abi = [
