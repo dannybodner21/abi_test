@@ -958,7 +958,7 @@ async function doThings() {
       await contract.methods.mint(count).send({from: account, value: mintPrice, gasPrice: '20000000000'})
 	    .then(function (txHash) {
 			
-		    amountMinted();
+		    amountMinted(contract);
 		    document.getElementById('message').innerHTML = "Successful transaction!";
 	      	    console.log("success");
 			
