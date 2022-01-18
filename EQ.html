@@ -29,7 +29,7 @@ async function getAccount() {
 function plusOne() {
 	if (count < 4) {
 		count++;
-		document.getElementById('mintButton').innerText = "mint " + string(count);
+		document.getElementById('mintButton').innerText = "mint " + count.toString();
 	}
 	console.log(count);
 }
@@ -37,7 +37,7 @@ function plusOne() {
 function minusOne() {
 	if (count > 1) {
 		count--;
-		document.getElementById('mintButton').innerText = "mint " + string(count);
+		document.getElementById('mintButton').innerText = "mint " + count.toString();
 	}
 	console.log(count);
 }
