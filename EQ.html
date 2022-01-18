@@ -947,11 +947,12 @@ async function doThings() {
   		
   	const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	const account = accounts[0];
-	const mintPrice = '220000000000000000';
+	var mintPrice = '220000000000000000';
 	const amount = await contract.methods.totalSupply().call();
 	if (amount > 176) {
 		mintPrice = '330000000000000000';
 	}
+	mintPrice = mintPrice * count;
 	    
       await contract.methods.mint(count).send({from: account, value: mintPrice, gasPrice: '20000000000'})
 	    .then(function (txHash) {
