@@ -73,10 +73,10 @@ async function doThings() {
 			console.log(networkId);
 			console.log("checking ethereum network");
       
-			if (networkId == 4) {
+			if (networkId == 1) {
 				console.log("network is good to go");
 		    
-				address = "0x63b5E9413128fFf29a64A8909c0E25280755a342";
+				address = "0xC0557393Ed2bA4de44E488E946dDd00FC2913139";
     		abi = [
     {
       "inputs": [
@@ -328,9 +328,9 @@ async function doThings() {
       "name": "keysPerAddressLimit",
       "outputs": [
         {
-          "internalType": "uint256",
+          "internalType": "uint8",
           "name": "",
-          "type": "uint256"
+          "type": "uint8"
         }
       ],
       "stateMutability": "view",
@@ -341,9 +341,9 @@ async function doThings() {
       "name": "maxSupply",
       "outputs": [
         {
-          "internalType": "uint256",
+          "internalType": "uint16",
           "name": "",
-          "type": "uint256"
+          "type": "uint16"
         }
       ],
       "stateMutability": "view",
@@ -352,9 +352,9 @@ async function doThings() {
     {
       "inputs": [
         {
-          "internalType": "uint256",
+          "internalType": "uint8",
           "name": "_mintAmount",
-          "type": "uint256"
+          "type": "uint8"
         }
       ],
       "name": "mint",
@@ -481,9 +481,9 @@ async function doThings() {
     {
       "inputs": [
         {
-          "internalType": "uint256",
+          "internalType": "uint8",
           "name": "_mintAmount",
-          "type": "uint256"
+          "type": "uint8"
         }
       ],
       "name": "penthouseMint",
@@ -515,9 +515,9 @@ async function doThings() {
       "name": "presaleCost",
       "outputs": [
         {
-          "internalType": "uint256",
+          "internalType": "uint64",
           "name": "",
-          "type": "uint256"
+          "type": "uint64"
         }
       ],
       "stateMutability": "view",
@@ -528,9 +528,9 @@ async function doThings() {
       "name": "presaleKeysPerAddressLimit",
       "outputs": [
         {
-          "internalType": "uint256",
+          "internalType": "uint8",
           "name": "",
-          "type": "uint256"
+          "type": "uint8"
         }
       ],
       "stateMutability": "view",
@@ -541,9 +541,9 @@ async function doThings() {
       "name": "presaleMintAmount",
       "outputs": [
         {
-          "internalType": "uint256",
+          "internalType": "uint8",
           "name": "",
-          "type": "uint256"
+          "type": "uint8"
         }
       ],
       "stateMutability": "view",
@@ -567,9 +567,9 @@ async function doThings() {
       "name": "publicSaleCost",
       "outputs": [
         {
-          "internalType": "uint256",
+          "internalType": "uint64",
           "name": "",
-          "type": "uint256"
+          "type": "uint64"
         }
       ],
       "stateMutability": "view",
@@ -580,9 +580,9 @@ async function doThings() {
       "name": "publicSaleMintAmount",
       "outputs": [
         {
-          "internalType": "uint256",
+          "internalType": "uint8",
           "name": "",
-          "type": "uint256"
+          "type": "uint8"
         }
       ],
       "stateMutability": "view",
