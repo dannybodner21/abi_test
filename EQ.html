@@ -9,8 +9,8 @@ window.addEventListener('load', function() {
   document.getElementById('message').innerHTML = "";
 	
   // plus and minus buttons
-  document.querySelector('#plusOneButton').addEventListener('click', () => plusOne());
-  document.querySelector('#minusOneButton').addEventListener('click', () => minusOne());
+  // document.querySelector('#plusOneButton').addEventListener('click', () => plusOne());
+  // document.querySelector('#minusOneButton').addEventListener('click', () => minusOne());
 	
   // mint button text
   document.getElementById('mintButton').innerText = "mint 1";
@@ -934,6 +934,10 @@ async function doThings() {
       let web3 = new Web3(ethereum);	  
     	contract = doThings();
    	  console.log("connected to contract");
+	  
+	  // plus and minus buttons
+  document.querySelector('#plusOneButton').addEventListener('click', () => plusOne());
+  document.querySelector('#minusOneButton').addEventListener('click', () => minusOne());
 	  
   })
     
