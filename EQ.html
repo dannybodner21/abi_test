@@ -19,6 +19,7 @@ window.addEventListener('load', function() {
 
 var contract;
 var count = 1;
+var maxMint = 2;
 	
 async function getAccount() {
     const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
@@ -27,7 +28,7 @@ async function getAccount() {
 }
 	
 function plusOne() {
-	if (count < 4) {
+	if (count < maxMint) {
 		count++;
 		document.getElementById('mintButton').innerText = "mint " + count.toString();
 	}
@@ -912,6 +913,7 @@ async function doThings() {
 				amountMinted(contract);
 				// check if contract is paused
 	  			paused(contract);
+				checkPresale(contract);
 	      			return contract;
       			} else {
 	        		console.log("not on correct network");
@@ -985,6 +987,15 @@ async function doThings() {
 		console.log("paused");
 	  }
     }
+	
+
+    async function checkPresale(contract) {
+	const isPresale = await contract.methods.onlyPresale().call();
+	if (!isPresale) {
+		maxMint = 4;	
+	}
+    }
+    
 	
     async function amountMinted (contract) {
       const amount = await contract.methods.totalSupply().call();
