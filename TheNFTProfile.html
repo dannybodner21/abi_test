@@ -71,8 +71,7 @@ window.addEventListener('load', function() {
   async function getAccountInfo(contract) {
 	  const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	  const account = accounts[0];
-	  document.getElementById('already-have-url').value = "thenftprofile.com/collection/" + account;
-	  console.log("this should work...");
+	  document.getElementById('already-have-url').innerHTML = "thenftprofile.com/collection/" + account;
   }
   
   $(document).ready(function()
