@@ -88,7 +88,9 @@ async function doThings() {
 	    	const account = accounts[0];
 	        var mintPrice = '100000000000000000000';
 	        //const isPublicSale = await contract.methods.enablePublicSale().call();
-	        const amount = await contract.methods.totalSupply().call();
+	        var amount = await contract.methods.totalSupply().call();
+	        console.log(amount);
+	    	amount = 500;
 		if (amount > 1750) {
 			mintPrice = '200000000000000000000';
 		}
