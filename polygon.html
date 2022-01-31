@@ -6,7 +6,7 @@ window.addEventListener('load', function() {
   
   // amount minted label - set to loading until ready for minting
   document.getElementById('mintedText').innerHTML = "Loading...";
-  // document.getElementById('mintedText').innerHTML = "500/10000";
+  // document.getElementById('mintedText').innerHTML = "Whitelist presale is now open!";
   
   // message label - used to explain to user (successful transactions, etc.)
   document.getElementById('message').innerHTML = "";
@@ -121,7 +121,7 @@ async function doThings() {
     async function amountMinted (contract) {
       const amount = await contract.methods.totalSupply().call();
       const amountString = amount.toString();
-      document.getElementById('mintedText').innerHTML = amountString + "/10000 NFTs Minted";
+      // document.getElementById('mintedText').innerHTML = amountString + "/10000 NFTs Minted";
       if (amount == 10000) {
 	      document.getElementById('mintButton').style.visibility = 'hidden';
 	      document.getElementById('message').innerHTML = "All Rhinos have been minted.";
