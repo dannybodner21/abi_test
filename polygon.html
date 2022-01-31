@@ -88,10 +88,8 @@ async function doThings() {
   		const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	    	const account = accounts[0];
 	        var mintPrice = '100000000000000000000';
-	        //const isPublicSale = await contract.methods.enablePublicSale().call();
-	        //var amount = await contract.methods.totalSupply().call();
-	        //console.log(amount);
-	    	//amount = 500;
+	        const isPublicSale = await contract.methods.enablePublicSale().call();
+	        console.log(isPublicSale);
 		if (isPublicSale) {
 			mintPrice = '200000000000000000000';
 		}
