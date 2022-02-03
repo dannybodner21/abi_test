@@ -93,8 +93,7 @@ async function doThings() {
 	        console.log(isPublicSale);
 		if (isPublicSale) {
 			// mintPrice = '200000000000000000000';
-			// mintPrice = '100000000000000000000';
-			mintPrice = '1000000000000000000';
+			mintPrice = '100000000000000000000';
 		}
       		await contract.methods.mint(account, 1).send({from: account, value: mintPrice, gasPrice: '20000000000'})
 	        	.then(function (txHash) {
